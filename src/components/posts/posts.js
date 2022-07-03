@@ -17,11 +17,11 @@ function Posts() {
     if (jsonNumber === 1) {
       dispatch(fetchPosts(jsonNumber));
     }
-  }, [jsonNumber]);
+  }, [jsonNumber, dispatch]);
 
   useEffect(() => {
     return () => dispatch(resetAllLoaded());
-  }, []);
+  });
 
   const trackScrolling = useCallback(() => {
     const el = document.getElementById("posts-container");
@@ -29,7 +29,7 @@ function Posts() {
       dispatch(fetchPosts(jsonNumber));
       // fetchPosts(jsonNumber)(dispatch);
     }
-  }, [jsonNumber, loading]);
+  }, [jsonNumber, loading, dispatch]);
 
   const isBottom = (el) => {
     return el.getBoundingClientRect().bottom <= window.innerHeight + 400;

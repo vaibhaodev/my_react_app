@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import "../../App.css";
 import {useSelector} from "react-redux";
 
-function NavBar(props) {
+function NavBar({postChangeHandler}) {
   const [searchValue, setSearchValue] = useState('');
   const [searchVisible, setSearchVisible] = useState(false);
   const oldPost = useSelector((store) => store.posts);
@@ -20,8 +20,8 @@ function NavBar(props) {
   }, [oldPost])
 
   useEffect(() => {
-    props.postChangeHandler(posts);
-  }, [posts])
+    postChangeHandler(posts);
+  }, [posts, postChangeHandler])
 
   useEffect(() => {
     if (searchValue.trim()) {
@@ -32,7 +32,7 @@ function NavBar(props) {
     } else {
       setPosts(prevState => oldPost);
     }
-  }, [searchValue, searchVisible]);
+  }, [searchValue, searchVisible, oldPost]);
 
   const search = () => {
 
@@ -46,10 +46,10 @@ function NavBar(props) {
   return (
     <div className="nav-bar">
       <form onSubmit={handleSubmit}>
-        <img className="back-btn" src="images/Back.png"/>
+        <img alt="" className="back-btn" src="images/Back.png"/>
         {!searchVisible ? <span className="heading">Romantic Comedy</span> : null}
         <button type="submit" onClick={searchedClicked} className="search-btn">
-          <img className="search-btn-img" src="images/search.png"/>
+          <img alt="" className="search-btn-img" src="images/search.png"/>
         </button>
         {searchVisible ?
           <input type="text"
