@@ -1,0 +1,135 @@
+.App {
+    text-align: left;
+    font-family: 'Titillium Web', serif;
+}
+
+.post {
+    border: 1px solid #b4adad;
+    padding: 5px;
+    margin: 6px;
+    background-color: #eee;
+}
+
+li.post {
+    list-style: none;
+}
+
+.posts {
+    text-align: left;
+}
+
+.title {
+    font-weight: 100;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 54px;
+}
+
+#posts-container {
+    background: black;
+    padding: 90px 0 0 30px;
+}
+
+.black-bg-card {
+    background: black;
+}
+
+.zero-padding {
+    padding: 0;
+}
+
+.zero-margin {
+    margin: 0;
+}
+
+.poster-image {
+    margin: 36px 30px 24px 0px;
+    width: stretch;
+    /*width: fill-available;*/
+}
+
+.nav-bar {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    padding: 18px 30px;
+    background-image: url('/public/images/nav_bar.png');
+    background-size: 100% 100%;
+    width: 100%;
+    height: 102px;
+}
+
+.heading {
+    color: white;
+    font-size: 29px;
+    margin-left: 20px;
+    float: left;
+}
+
+.search-text {
+    float: right;
+    background: black;
+    border: 0;
+    color: white;
+    font-size: 20px;
+    margin-top: 7px;
+    width: 80%;
+    border-bottom: 1px solid gray;
+}
+
+.search-text::placeholder {
+    color: grey;
+}
+
+.search-text:focus, ::placeholder {
+    border: 0;
+    outline: none;
+}
+
+.search-btn {
+    border: 0;
+    background: transparent;
+    float: right;
+    margin-right: 7px;
+}
+
+.search-btn:hover {
+    opacity: 0.7;
+}
+
+.search-btn-img {
+    width: 40px;
+}
+
+.back-btn {
+    float: left;
+    width: 40px;
+}
+
+@media only screen and (max-width: 415px) {
+    .heading {
+        font-size: 16px;
+    }
+
+    .back-btn {
+        width: 23px;
+    }
+
+    .search-btn-img {
+        width: 23px;
+    }
+
+    .search-text {
+        margin-top: 0;
+        font-size: 16px;
+        padding-bottom: 3px;
+    }
+
+    .nav-bar {
+        padding: 18px 10px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+}
